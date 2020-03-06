@@ -1,0 +1,41 @@
+Database Schema: Text file that contains all of the SQL CREATE TABLE
+statements needed to create all of the tables in your database schema.
+_____________________________________________________________________
+
+create table if not exists AuthToken(
+    authToken text unique not null,
+    associatedUsername text not null
+);
+
+create table if not exists Event(
+    eventID text unique not null,
+    associatedUsername text not null,
+    personID text not null,
+    latitude real,
+    longitude real,
+    country text,
+    city text,
+    eventType text,
+    year integer
+);
+
+create table if not exists User(
+    userName text unique not null,
+    password text not null,
+    email text not null,
+    firstName text not null,
+    lastName text not null,
+    gender char(1),
+    personID text unique not null
+);
+
+create table if not exists Person(
+    personID text unique not null,
+    associatedUsername text not null,
+    firstName text not null,
+    lastName text not null,
+    gender char(1),
+    fatherID text,
+    motherID text,
+    spouseID text
+);

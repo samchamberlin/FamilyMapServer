@@ -1,0 +1,9 @@
+Register services:
+    -generates 4 generations of realistic ancestor data
+    -call the DAO and create/pass model objects
+
+Login services:
+
+Clear services:
+
+Fill services:
